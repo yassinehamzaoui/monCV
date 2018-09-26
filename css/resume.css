@@ -4,6 +4,9 @@ color:#444;
 html{ font-size : 1em;
 line-height:1.4;
 }
+dt{
+color:red;
+}
 body{background-color:#4712;
 }
 #wrapper {
@@ -11,6 +14,7 @@ body{background-color:#4712;
 	min-width: 320px;
 	margin-left: auto;
 	margin-right: auto;
+	border: 2px solid;
 }
 body img{
 	border: 1px solid;
