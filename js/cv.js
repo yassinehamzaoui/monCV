@@ -1,10 +1,23 @@
+function showDetails(x){
+	
+        var divid=document.getElementById(x);            	
+		var visibles = document.getElementsByClassName("p1");
 
+		[].forEach.call(visibles, function (i) {i.classList.remove("p1");
+			if(i!==divid)
+			i.style.display="none";			
+});		
 
+		if(divid.style.display == 'none'){
+		divid.classList.add("p1");
+		divid.style.display='inline';}
+		else{
 
-
-
-
-function showDetails(variable){
+		divid.style.display='none';
+		}
+}
+/*
+function showDetailss(variable){
 
 	var list = document.getElementsByClassName("p1");
 		if(variable=='0'){
@@ -50,3 +63,4 @@ function showDetails(variable){
 		
 		}
 }
+*/
