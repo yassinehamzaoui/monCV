@@ -9,12 +9,14 @@ color:red;
 }
 body{background-color:#4712;
 }
+
 #wrapper {
 	max-width: 900px;
 	min-width: 320px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 2px solid;
+	outline: 2px solid;
+	outline-offset: 10px;
 }
 body img{
 	border: 1px solid;
