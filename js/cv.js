@@ -40,22 +40,40 @@ function SizeProgress(multiple) {
 	// after 2 seconds stop
 	setTimeout(() => { clearInterval(timerId);}, 1000);
 }
+var tooltipsHTML = document.getElementsByClassName("tooltip");
+var tooltips = [];
+var tooltiptextsHTML = document.getElementsByClassName("tooltiptext");
+var tooltiptexts = [];
 
-function tooltip_move(e) {
-  var tooltip = e.target.classList.contains("coupontooltip")
-      ? e.target
-      : e.target.querySelector(":scope .coupontooltip");
-  tooltip.style.left =
-      (e.pageX + tooltip.clientWidth + 10 < document.body.clientWidth)
-          ? (e.pageX + 10 + "px")
-          : (document.body.clientWidth + 5 - tooltip.clientWidth + "px");
-  tooltip.style.top =
-      (e.pageY + tooltip.clientHeight + 10 < document.body.clientHeight)
-          ? (e.pageY + 10 + "px")
-          : (document.body.clientHeight + 5 - tooltip.clientHeight + "px");
+for (var i = 0; i < tooltipsHTML.length; i++) {
+  tooltips = [...tooltips, tooltipsHTML.item(i)];
+  tooltiptexts = [...tooltiptexts, tooltiptextsHTML.item(i)];
 }
 
-var tooltips = document.querySelectorAll('.couponcode');
-for(var i = 0; i < tooltips.length; i++) {
-  tooltips[i].addEventListener('mousemove', showTooltip);
+tooltips.forEach(function(tooltip) {
+  tooltip.onmousemove = function(event) {
+    var rect = tooltip.getBoundingClientRect();
+    var x = event.clientX - rect.x;
+    tooltiptexts.forEach(function(tooltiptext) {
+      tooltiptext.style.left = x + "px";
+    });
+  };
+});
+var levels = {
+	J2e : 3,
+	Java : 5,
+	C : 5,
+	Python : 3,
+	htmlcssjs : 4,
+	PHP : 4,
+	TSQLSQL : 5
+};
+
+for (field in levels) {
+  var stars = document.getElementsByClassName(field).item(0);
+  var children = stars.children;
+  for (var i = 0; i < levels[field]; i++) {
+    var star = children.item(i);
+    star.className = "fas fa-star";
+  }
 }

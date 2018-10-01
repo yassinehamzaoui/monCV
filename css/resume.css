@@ -16,7 +16,7 @@ body{background-color:#4712;
 	margin-left: auto;
 	margin-right: auto;
 	outline: 2px solid;
-	outline-offset: 10px;
+	outline-offset: 20px;
 }
 body img{
 	border: 1px solid;
@@ -32,7 +32,9 @@ h1 {
 
 p {font-family: asul, sans-serif;
 }
-
+.fa, .fas {
+	color:red;
+}
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -60,48 +62,46 @@ p {font-family: asul, sans-serif;
   color: white;
 }
 
+.display {
+  display: inherit;
+}
+
+.hide {
+  display: none;
+}
 .tooltip {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 2px 0;
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 250px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 0;
+  margin-left: -60px;
 }
 
 .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
 }
-
-
-
-
-
-
-
-
